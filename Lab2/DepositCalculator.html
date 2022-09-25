@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Deposit Calculator</title>
+</head>
+<body>
+<h2 class="text-center mt-4">Deposit Calculator</h2>
+<div class="container mt-4 mb-4">
+<!-- post form data to form.php -->
+<form method = "post" action = "DepositCalculator.php">
+  <div class="form-group row">
+    <label class="col-sm-2 offset-md-3 col-form-label font-weight-bold" for="principalAmount">Principal Amount:</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="principalAmount" name="principalAmount">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 offset-md-3 col-form-label font-weight-bold" for="interestRate">Interest Rate (%):</label>
+    <div class="col-sm-4">
+    <input type="text" class="form-control" id="interestRate" name="interestRate">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 offset-md-3 col-form-label font-weight-bold" for="yearsToDeposit">Years to Deposit:</label>
+    <div class="col-sm-4">
+    <select class="form-control" id="yearsToDeposit" name="yearsToDeposit">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+    </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-7 offset-md-3">
+  <hr>
+  </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 offset-md-3 col-form-label font-weight-bold" for="name">Name:</label>
+    <div class="col-sm-4">
+    <input type="text" class="form-control" id="name" name="name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 offset-md-3 col-form-label font-weight-bold" for="postalCode">Postal Code:</label>
+    <div class="col-sm-4">
+    <input type="text" class="form-control" id="postalCode" name="postalCode">
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 offset-md-3 col-form-label font-weight-bold" for="phoneNumber">Phone Number:</label>
+      <div class="col-sm-4">
+    <input type="text" class="form-control" id="phoneNumber" name="phoneNumber">
+      </div>
+    </div>
+  <div class="form-group row">
+    <label class="col-sm-2 offset-md-3 col-form-label font-weight-bold" for="email">Email:</label>
+    <div class="col-sm-4">
+    <input type="text" class="form-control" id="email" name="email">
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-7 offset-md-3">
+      <hr>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-3 offset-md-3 col-form-label font-weight-bold" for="inlineRadio2">Preferred Contact Method:</label>
+    <div class="col-sm-3 col-form-label">
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="contactMethod" id="inlineRadio1" value="phone" checked>
+    <label class="form-check-label" for="inlineRadio1">Phone</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="contactMethod" id="inlineRadio2" value="email">
+    <label class="form-check-label" for="inlineRadio2">Email</label>
+  </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-7 offset-md-3 col-form-label font-weight-bold" for="inlineCheckbox1">If phone is selected, when can we contact you? (check all that is applicable)</label>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-4 offset-md-3">
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" name="contactTime[]" id="inlineCheckbox1" value="morning">
+    <label class="form-check-label" for="inlineCheckbox1">Morning</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" name="contactTime[]" id="inlineCheckbox2" value="afternoon">
+    <label class="form-check-label" for="inlineCheckbox2">Afternoon</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" name="contactTime[]" id="inlineCheckbox3" value="evening">
+    <label class="form-check-label" for="inlineCheckbox3">Evening</label>
+  </div>
+    </div>
+  </div>
+    <div class="form-group row">
+      <div class="col-sm-4 offset-md-3">
+  <button type="submit" class="btn btn-primary">Calculate</button>
+    <button type="reset" class="btn btn-primary">Clear</button>
+      </div>
+    </div>
+</form>
+</div>
+</body>
+</html>
